@@ -3,34 +3,35 @@ package org.example;
 public class Person {
 
     String firstname;
-    String lastname;
+    private final String lastName;
     int age;
     double grade;
     int id;
     boolean isTeen;
 
+
     // 1️⃣ 6 parametreli constructor
-    public Person(String firstname, String lastname, int age, double grade, int id, boolean isTeen) {
+    public Person(String firstname, String lastName, int age, double grade, int id, boolean isTeen) {
         this.firstname = firstname;
+        this.lastName = lastName;
         this.age = age;
-        this.lastname = lastname;
+        this.grade = grade;
         this.id = id;
         this.isTeen = isTeen;
-        this.grade = grade;
     }
 
     // 2️⃣ 3 parametreli constructor → chaining
-    public Person(String firstname, String lastname, int age) {
-        this(firstname, lastname, age, 0, 0, 0); // varsayılan değerlerle çağırıyor
+    public Person(String firstname, String lastName, int age) {
+        this(firstname, lastName, age, 0, 0, true); // varsayılan değerlerle çağırıyor
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstname;
     }
 
     // 2. getLastName
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     // 3. getAge
